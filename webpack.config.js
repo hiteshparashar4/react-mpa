@@ -32,13 +32,13 @@ module.exports = {
       cacheGroups: {
         react: {
           test: /[\\/]node_modules[\\/](react|react-dom)[\\/]/,
-          name: 'react-vendor',
+          name: 'vendor-react',
           enforce: true,
           priority: 30
         },
         sharedLibs: {
           test: /[\\/]node_modules[\\/]/,
-          name: 'shared-libs',
+          name: 'vendor-shared',
           minChunks: 2,
           priority: 10,
           reuseExistingChunk: true
