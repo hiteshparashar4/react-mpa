@@ -1,11 +1,8 @@
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom/client';
-import _ from 'lodash';
 
 const About = () => {
   const [email, setEmail] = useState('');
-  const array = [1];
-  const other = _.concat(array, 2, [3]);
 
   return (
     <form action="/submit-about" method="POST">
