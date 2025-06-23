@@ -1,0 +1,20 @@
+# Untracked general purpose files:
+.idea
+.project
+.sass-cache
+.settings
+*.bak
+*.bck
+*.log
+*.orig
+*.sublime-*
+*.tmp
+npm-debug*
+
+# Untracked general purpose directories:
+dist
+docs
+node_modules
+tmp
+
+# Untracked s
