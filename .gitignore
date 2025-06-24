@@ -13,6 +13,7 @@ npm-debug*
 
 # Untracked general purpose directories:
 dist
+dist-server
 docs
 node_modules
 tmp
