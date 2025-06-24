@@ -6,7 +6,7 @@
     "build": "webpack --mode=production",
     "dev": "webpack serve",
     "lint": "eslint . --ext .js,.jsx,.css",
-    "lint:fix": "eslint . --ext .js,.jsx,.css --fix"
+    "lint:fix": "eslint ./src --ext .js,.jsx,.css --fix"
   },
   "dependencies": {
     "express": "^4.19.2",

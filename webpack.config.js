@@ -51,19 +51,19 @@ module.exports = {
       title: 'Home Page',
       filename: 'home.html',
       template: './src/templates/template.html',
-      chunks: ['runtime', 'react-vendor', 'shared-libs', 'home']
+      chunks: ['runtime', 'vendor-react', 'vendor-shared', 'home']
     }),
     new HtmlWebpackPlugin({
       title: 'About Page',
       filename: 'about.html',
       template: './src/templates/template.html',
-      chunks: ['runtime', 'react-vendor', 'shared-libs', 'about']
+      chunks: ['runtime', 'vendor-react', 'vendor-shared', 'about']
     }),
     new HtmlWebpackPlugin({
       title: 'Contact Page',
       filename: 'contact.html',
       template: './src/templates/template.html',
-      chunks: ['runtime', 'react-vendor', 'shared-libs', 'contact']
+      chunks: ['runtime', 'vendor-react', 'vendor-shared', 'contact']
     })
   ],
   devServer: {
