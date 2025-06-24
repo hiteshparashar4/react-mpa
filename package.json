@@ -2,11 +2,11 @@
   "name": "react-mpa-src-html",
   "version": "1.0.0",
   "scripts": {
-    "start": "node server.js",
+    "start": "node ./server/server.js",
     "build": "webpack --mode=production",
     "dev": "webpack serve",
     "lint": "eslint . --ext .js,.jsx,.css",
-    "lint:fix": "eslint ./src --ext .js,.jsx,.css --fix"
+    "lint:fix": "eslint . --ext .js,.jsx,.css --fix"
   },
   "dependencies": {
     "express": "^4.19.2",

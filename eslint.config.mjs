@@ -6,6 +6,21 @@ import { defineConfig } from 'eslint/config';
 
 export default defineConfig([
   {
+    ignores: [
+      'node_modules/',
+      'dist/',
+      'build/',
+      '*.log',
+      '*.tmp',
+      '*.md',
+      'coverage/',
+      'webpack-stats.json',
+      '.dockerignore',
+      'Dockerfile',
+      '.gitignore'
+    ],
+  },
+  {
     files: ['**/*.{js,jsx,mjs,cjs}'],
     languageOptions: {
       ecmaVersion: 'latest',
