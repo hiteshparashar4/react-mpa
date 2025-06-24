@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "start": "node ./server/server.js",
-    "build": "webpack --mode=production",
+    "build": "webpack --mode=production && webpack --config webpack.server.config.js",
     "dev": "webpack serve",
     "lint": "eslint . --ext .js,.jsx,.css",
     "lint:fix": "eslint . --ext .js,.jsx,.css --fix"
