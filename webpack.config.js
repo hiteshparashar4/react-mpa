@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   mode: 'development',
@@ -64,7 +65,12 @@ module.exports = {
       filename: 'contact.html',
       template: './src/templates/template.html',
       chunks: ['runtime', 'vendor-react', 'vendor-shared', 'contact']
-    })
+    }),
+    new CopyPlugin({
+      patterns: [
+        { from: 'public/favicon.ico', to: 'favicon.ico' },
+      ],
+    }),
   ],
   devServer: {
     static: { directory: path.join(__dirname, 'dist') },

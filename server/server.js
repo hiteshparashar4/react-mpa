@@ -4,6 +4,7 @@ const app = express();
 const PORT = 3000;
 
 const DIST_DIR = path.resolve(__dirname, '..', 'dist');
+console.log('__dirname:', __dirname);
 console.log('Serving static content from:', DIST_DIR);
 
 app.use(express.static(DIST_DIR));
