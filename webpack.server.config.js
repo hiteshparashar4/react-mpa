@@ -1,19 +1,21 @@
-import path from 'path';
-import { fileURLToPath } from 'url';
+const path = require('path');
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-export default {
-  entry: './server/server.js',
-  target: 'node',
+module.exports = {
   mode: 'production',
+  entry: {
+    server: './server/server.js'
+  },
+  target: 'node',
   output: {
     filename: 'server.bundle.js',
     path: path.resolve(__dirname, 'dist-server'),
+    clean: true
   },
   resolve: {
-    extensions: ['.js'],
+    extensions: ['.js', '.json'],
+  },
+  optimization: {
+    minimize: true,
   },
   externals: {},
 };
