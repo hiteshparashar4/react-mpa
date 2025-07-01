@@ -1,23 +1,23 @@
 const express = require('express');
 const path = require('path');
+require('./db'); // connects to MongoDB
+
 const app = express();
 const PORT = 3000;
 
 const DIST_DIR = path.resolve(__dirname, '..', 'dist');
-console.log('__dirname:', __dirname);
-console.log('Serving static content from:', DIST_DIR);
 
 app.use(express.static(DIST_DIR));
 app.use(express.urlencoded({ extended: true }));
 
+// Page routes
 app.get('/', (_, res) => res.sendFile(path.join(DIST_DIR, 'home.html')));
 app.get('/about', (_, res) => res.sendFile(path.join(DIST_DIR, 'about.html')));
 app.get('/contact', (_, res) => res.sendFile(path.join(DIST_DIR, 'contact.html')));
 
-app.post('/submit-home', (req, res) => {
-  console.log('Home Data:', req.body);
-  res.send('Home form submitted successfully!');
-});
+// API routes
+const homeRoutes = require('./routes/homeRoutes');
+app.use('/', homeRoutes);
 
 app.post('/submit-about', (req, res) => {
   console.log('About Data:', req.body);
@@ -30,5 +30,5 @@ app.post('/submit-contact', (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}`);
+  console.log(`🚀 Server running at http://localhost:${PORT}`);
 });
