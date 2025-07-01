@@ -9,6 +9,7 @@
 *.orig
 *.sublime-*
 *.tmp
+.env
 npm-debug*
 
 # Untracked general purpose directories:
