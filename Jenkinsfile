@@ -10,6 +10,13 @@ pipeline {
     }
 
     stages {
+
+        stage('Checkout Code') {
+            steps {
+                checkout scm
+            }
+        }
+        
         stage('Get Commit SHA') {
             steps {
                 script {
@@ -17,6 +24,12 @@ pipeline {
                     env.IMAGE_TAG = IMAGE_TAG
                     echo "Resolved image tag: ${DOCKER_IMAGE}:${IMAGE_TAG}"
                 }
+            }
+        }
+
+        stage('Install Dependencies & Test') {
+            steps {
+                sh npm install
             }
         }
 
