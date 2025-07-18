@@ -3,21 +3,10 @@ pipeline {
 
     environment {
         DOCKER_IMAGE = 'hitesh482/react-mpa-app'
-        KUBECONFIG = '/home/your-user/.kube/config'
+        KUBECONFIG = '/home/ubuntu/.kube/config'
     }
 
     stages {
-        stage('Checkout') {
-            steps {
-                checkout([$class: 'GitSCM',
-                    branches: [[name: '*/master']],
-                    userRemoteConfigs: [[
-                        url: 'https://github.com/hiteshparashar4/react-mpa.git',
-                        credentialsId: 'github-creds'
-                    ]]
-                ])
-            }
-        }
 
         stage('Get Commit SHA') {
             steps {
@@ -75,7 +64,6 @@ pipeline {
                     def inputFile = 'deploy/deployment.yaml'
                     def outputFile = 'deploy/deployment.processed.yaml'
 
-                    // Patch YAML: replace $DEPLOY_IMAGE
                     sh """
                         sed 's|\\$DEPLOY_IMAGE|${env.DEPLOY_IMAGE}|' ${inputFile} > ${outputFile}
                         cat ${outputFile}
