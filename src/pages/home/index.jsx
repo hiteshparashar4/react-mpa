@@ -6,7 +6,7 @@ const Home = () => {
   
   return (
     <form action='/submit-home' method='POST'>
-      <h2>Home Page</h2>
+      <h2>Welcome!! Home Page</h2>
       <label>
         Name:
         <input name='name' value={name} onChange={(e) => setName(e.target.value)} required />
