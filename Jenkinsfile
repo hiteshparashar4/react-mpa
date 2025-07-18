@@ -16,7 +16,7 @@ pipeline {
                 checkout scm
             }
         }
-        
+
         stage('Get Commit SHA') {
             steps {
                 script {
@@ -29,7 +29,7 @@ pipeline {
 
         stage('Install Dependencies & Test') {
             steps {
-                sh npm install
+                sh "npm install"
             }
         }
 
