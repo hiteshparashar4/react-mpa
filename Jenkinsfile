@@ -70,7 +70,7 @@ pipeline {
 
         stage('Deploy to Kubernetes') {
             steps {
-                sh "kubectl apply -f ${PROCESSED_YAML_PATH} --kubeconfig=${KUBECONFIG}"
+                sh "kubectl apply -n cicd -f ${PROCESSED_YAML_PATH} --kubeconfig=${KUBECONFIG}"
             }
         }
     }
