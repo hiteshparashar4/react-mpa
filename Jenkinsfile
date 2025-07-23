@@ -27,9 +27,9 @@ pipeline {
             }
         }
 
-        stage('Install Dependencies & Test') {
+        stage('Install Dependencies & Build') {
             steps {
-                sh "npm install"
+                sh "npm ci"
                 sh "npm run build"
             }
         }

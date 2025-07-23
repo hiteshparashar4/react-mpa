@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "scripts": {
     "start": "nodemon ./server/server.js",
-    "build": "webpack --mode=production && webpack --config webpack.server.config.js",
+    "build:client": "webpack --mode=production",
+    "build:server": "webpack --config webpack.server.config.js",
+    "build": "npm run build:client && npm run build:server",
     "dev": "webpack serve",
     "lint": "eslint . --ext .js,.jsx,.css",
     "lint:fix": "eslint . --ext .js,.jsx,.css --fix"

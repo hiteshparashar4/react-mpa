@@ -1,6 +1,6 @@
 const express = require('express');
 const path = require('path');
-require('./db'); // connects to MongoDB
+require('./db');
 
 const app = express();
 const PORT = 3000;
