@@ -72,6 +72,7 @@ pipeline {
         stage('Deploy to Kubernetes') {
             steps {
                 sh "kubectl apply -n cicd -f ${PROCESSED_YAML_PATH} --kubeconfig=${KUBECONFIG}"
+                sh "kubectl rollout restart deployment react-mpa-app -n cicd"
             }
         }
     }
