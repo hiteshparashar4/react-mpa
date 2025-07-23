@@ -30,7 +30,7 @@ pipeline {
         stage('Install Dependencies & Test') {
             steps {
                 sh "npm install"
-                sh "npm build"
+                sh "npm run build"
             }
         }
 
