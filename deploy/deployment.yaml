@@ -52,9 +52,3 @@ spec:
       targetPort: 3000
       nodePort: 30080
 ---
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: react-mpa-app-ns
-  labels:
-    nmme: react-mpa-app-ns
