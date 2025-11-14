@@ -3,7 +3,7 @@ apiVersion: v1
 kind: Secret
 metadata:
   name: mongo-secret
-  namespace: cicd
+  namespace: react-mpa-app-ns
 type: Opaque
 stringData:
   MONGO_URI: "mongodb+srv://admin:admin@cluster0.la6jq.mongodb.net/formdata?retryWrites=true&w=majority&appName=Cluster0"
@@ -13,7 +13,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: react-mpa-app
-  namespace: cicd
+  namespace: react-mpa-app-ns
   labels:
     app: react-mpa-app
 spec:
@@ -52,3 +52,9 @@ spec:
       targetPort: 3000
       nodePort: 30080
 ---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: react-mpa-app-ns
+  labels:
+    nmme: react-mpa-app-ns
